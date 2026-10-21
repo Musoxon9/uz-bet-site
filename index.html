@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07110b">
+  <meta name="description" content="UZ BET — futbol yangiliklari, sport xabarlari va o‘yinlar tahlili.">
+  <title>UZ BET | Sport yangiliklari</title>
+  <style>
+    :root{--bg:#070b09;--panel:#101a14;--green:#39ff62;--green2:#16c747;--text:#f4fff6;--muted:#a9b9ad;--line:#24392b}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at top,#102719 0%,var(--bg) 48%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:#070b09eF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.5px;font-size:1.25rem}
+    .mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#59ff78,#078b2d);color:#061108;font-weight:1000;box-shadow:0 0 24px #39ff6233}
+    .brand span em{font-style:normal;color:var(--green)}
+    .navlinks{display:flex;gap:20px;color:var(--muted);font-size:.95rem}
+    .navlinks a:hover{color:var(--green)}
+    .hero{padding:76px 0 54px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
+    .eyebrow{display:inline-block;padding:6px 11px;border:1px solid #2b6339;border-radius:999px;color:var(--green);font-size:.8rem;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,7vw,5rem);line-height:1.02;margin:18px 0;letter-spacing:-2px}
+    h1 span{color:var(--green);text-shadow:0 0 28px #39ff622b}
+    .lead{color:var(--muted);font-size:1.08rem;max-width:590px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:12px 18px;border-radius:12px;font-weight:850;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:var(--green);color:#061108;border-color:var(--green)}
+    .btn.primary:hover{background:#7aff92;transform:translateY(-2px)}
+    .btn.secondary:hover{border-color:var(--green);color:var(--green)}
+    .hero-card{border:1px solid #2b4933;border-radius:25px;padding:24px;background:linear-gradient(145deg,#15271a,#0a100c);box-shadow:0 20px 70px #0008;position:relative;overflow:hidden}
+    .hero-card:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-70px;top:-80px;background:#39ff6214;filter:blur(4px)}
+    .ball{font-size:4.5rem;filter:drop-shadow(0 0 24px #39ff623b)}
+    .hero-card h2{margin:5px 0 7px;font-size:1.5rem}
+    .hero-card p{margin:0;color:var(--muted)}
+    .mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+    .stat{background:#07100a;border:1px solid var(--line);border-radius:13px;padding:12px}
+    .stat strong{display:block;color:var(--green);font-size:1.15rem}
+    .stat small{color:var(--muted)}
+    section{padding:36px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}
+    h2{margin:0;font-size:clamp(1.5rem,4vw,2.1rem)}
+    .section-head p{margin:4px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(160deg,#122018,#0b110d);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:190px}
+    .tag{display:inline-block;color:var(--green);font-size:.76rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+    .card h3{margin:0 0 9px;font-size:1.12rem}
+    .card p{margin:0;color:var(--muted);font-size:.94rem}
+    .cta{margin:32px 0 50px;padding:28px;border-radius:22px;border:1px solid #2c6038;background:linear-gradient(110deg,#12281a,#0c130e);display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cta p{color:var(--muted);margin:5px 0 0}
+    footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:.87rem}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}.grid{grid-template-columns:1fr}.navlinks{gap:12px;font-size:.82rem}.cta{align-items:flex-start;flex-direction:column}.hero-card{max-width:520px}}
+    @media(max-width:420px){.navlinks a:nth-child(2){display:none}.brand{font-size:1.05rem}.mark{width:36px;height:36px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="UZ BET bosh sahifa"><span class="mark">UZ</span><span>UZ <em>BET</em></span></a>
+    <nav class="navlinks" aria-label="Asosiy menyu">
+      <a href="#yangiliklar">Yangiliklar</a>
+      <a href="#tahlil">Tahlillar</a>
+      <a href="#telegram">Telegram</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">🇺🇿 Sport olami</span>
+      <h1>Sportni <span>birga</span><br>kuzatamiz.</h1>
+      <p class="lead">Futbol yangiliklari, sport olamidagi muhim voqealar va o‘yinlar haqidagi tahlillar — barchasi UZ BET sahifasida.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://t.me/uzbetuz1" target="_blank" rel="noopener">Telegram kanaliga o‘tish ↗</a>
+        <a class="btn secondary" href="#yangiliklar">Yangiliklarni ko‘rish</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="ball" aria-hidden="true">⚽</div>
+      <h2>UZ <span style="color:var(--green)">BET</span></h2>
+      <p>Sport yangiliklari va tahlillar uchun zamonaviy sahifa.</p>
+      <div class="mini-stats">
+        <div class="stat"><strong>SPORT</strong><small>Yangiliklar</small></div>
+        <div class="stat"><strong>UZ 🇺🇿</strong><small>Mahalliy auditoriya</small></div>
+      </div>
+    </aside>
+  </div>
+
+  <section id="yangiliklar">
+    <div class="wrap">
+      <div class="section-head"><div><h2>So‘nggi yangiliklar</h2><p>Sport olamidan kuzatib boring.</p></div></div>
+      <div class="grid">
+        <article class="card"><span class="tag">Futbol</span><h3>Futbol olamidagi voqealar</h3><p>Jamoalar, futbolchilar va musobaqalar haqidagi yangiliklarni shu bo‘limda joylashtiring.</p></article>
+        <article class="card"><span class="tag">Tahlil</span><h3>O‘yin oldi tahlillari</h3><p>Jamoalarning so‘nggi natijalari va o‘yin uslublari haqida ma’lumotlar.</p></article>
+        <article class="card"><span class="tag">Sport</span><h3>Eng muhim xabarlar</h3><p>Mahalliy va xalqaro sport yangiliklari uchun alohida bo‘lim.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tahlil">
+    <div class="wrap">
+      <div class="section-head"><div><h2>UZ BET haqida</h2><p>Qora-yashil uslub, sodda navigatsiya va mobilga mos sahifa.</p></div></div>
+      <div class="card"><p>Bu boshlang‘ich shablon. Haqiqiy yangiliklarni, rasmlarni va aloqa ma’lumotlarini o‘zingizga tegishli yoki foydalanishga ruxsat berilgan materiallar bilan almashtiring.</p></div>
+    </div>
+  </section>
+
+  <section id="telegram">
+    <div class="wrap">
+      <div class="cta">
+        <div><h2>Telegram kanalimizga qo‘shiling</h2><p>UZ BET yangiliklarini bir joyda kuzatib boring.</p></div>
+        <a class="btn primary" href="https://t.me/uzbetuz1" target="_blank" rel="noopener">Kanalga obuna bo‘lish ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot"><span>© 2026 UZ BET</span><span>Sport ma’lumotlari va tahlillar sahifasi</span></div>
+</footer>
+</body>
+</html>
